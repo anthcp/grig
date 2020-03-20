@@ -1,0 +1,177 @@
+GRIG 0.8.1:
+- Maintenance update
+- French l10n
+
+GRIG 0.8.0:
+
+- Frequency entry via keypad (thanks to Alessandro Zummo).
+- Arrow LEFT/RIGHT will change the frequency with the smallest step. This can
+  be used for tuning using external devices like the Powermate.
+* Support for VFO->MEM and MEM->VFO function.
+- Support on/off rig functions.
+- Added an extra gigahertz digit in lcd display
+- Added antenna control
+- French l10n
+- Fixed crash that occurs when mouse is clicked between MHz and kHz digits.
+  Reported as Ubuntu bug 517816.
+- Requires Gtk+ 2.12 and Hamlib 1.2.8+
+
+
+GRIG 0.7.2:
+
+- Fixed bug that caused wrong handling of RF gain, IF shift, MIC gain,
+  and compressor controls (bug #1613622).
+- Give volume level control higher priority to avoid jumpy behaviour
+  (bug #1616926).
+
+
+GRIG 0.7.1:
+
+- A bug that caused installation to fail has been fixed (#1523367).
+
+
+GRIG 0.7.0:
+
+- Added receiver and transmitter level controls.
+- Fixed bug that caused installation errors when using autoconf 2.59e.
+- Pixmaps are now installed to /usr/local/share/pixmaps/grig instead of
+  /usr/local/share/grig/pixmaps by default (related to the above bug).
+
+
+GRIG 0.6.0:
+
+- Save and restore RIG state.
+- RF power meter scale is now functional with ranges of 5, 10, 50, 100
+  and 500 watts. There is currently a bug, which causes the meter needle
+  to jump up when switching between RX/TX.
+- Fixed bug, which caused the frequency reading to flicker between the
+  current value and a previously set value (bug #1388342). Same bug was
+  found for the PTT and POWER controls, too.
+- Fixed bug, which gave the error message "Can not find VFO list for this
+  rig! Bug in backend?" if the rig did not have any of the rig_set_vfo or
+  rig_get_vfo functions (bug #1440876).
+- Better error messages when a command fails to execute.
+- Fixed bug, which blocked the debug handler to properly filter messages
+  coming from grig (hamlib messages were filtered correctly).
+
+
+GRIG 0.5.0:
+
+- Requires Gtk+ 2.6 and Hamlib 1.2.5
+- Added VFO and SPLIT controls.
+- Special rig functions: LOCK, ...
+- Use own debug handler for both hamlib and grig messages
+  and format debug messages so that become easier to analyse.
+- New debug message window, which can be used to analyse
+  previously saved debug messages.
+- Modified shutdown procedure to wait until daemon actually
+  finishes instead of using a fixed length timeout.
+- Disable POWER and PTT buttons by default (can be enabled
+  via the command line).
+- Optimisation of the daemon process allowing faster reaction
+  when PTT is toggled.
+- The mode selector combo only shows modes, which are supported
+  by the rig.
+- Fixed erroneous detection of set/get level availability
+  (bug #1266068).
+- Fixed incorrect handling of empty ATT, PREAMP and tuning
+  step lists in the Radio Info window (bug #1266071).
+- Fixed a bug, which caused grig to display WIDE instead of
+  NORMAL passband when the rig has no wide passband.
+- Optimised S-meter dynamics.
+- Better detection of frequency ranges and resolutions.
+- Corrected various mistakes in the manual page.
+- Various minor improvements to the user interface.
+- Several minor changes to support wintendo builds.
+
+
+GRIG 0.4.3:
+
+- Changed usleep to g_usleep to make code more portable.
+
+
+GRIG 0.4.2:
+
+- Added command line option to specify a delay between the
+  execution of each command. This has been introduced as an
+  attempt to avoid buffer overflow in some radios caused by
+  to fast polling.
+- Added command line option to disable threads and use a
+  regular timeout based daemon process instead (problem
+  reported on FreeBSD).
+- Fixed a bug which caused the frequency display to flicker.
+- Fixed a bug which caused the README, NEWS, AUTHORS, COPYING
+  and ChangeLog files not to be installed.
+- Only poll the selected meter setting when in TX mode.
+
+
+GRIG 0.4.1:
+
+- Fixed a bug which caused the pixmaps to be omitted from
+  the source package.
+
+
+GRIG 0.4.0:
+
+- Ported to Gtk2; requires Gtk+ 2.4 or greater. Removed
+  Gnome and GConf dependencies.
+- Requires Hamlib 1.2.0 or greater.
+- Added continuous readback from radio.
+- Read signal strength, tx-power, swr and alc when available.
+- Removed rotator support (will be in a separate program).
+- Radio configuration is set via the command line and the
+  first time wizard has been completely removed.
+- Added RIT control.
+- Removed level sliders, will be re-added in the next version.
+
+
+GRIG 0.3.0 (never relesed, available from CVS):
+
+- Rotator support with the possibility for AZ, EL or AZ/EL
+  rotators.
+- New rig controls: PTT.
+- Possibility to configure the serial speed (backends can
+  override it though?).
+- Active readback from rig and rotator.
+- Fixed bug which caused the number of radios to be reset to
+  1, if the user re-ran the first time druid (#750024).
+
+
+GRIG 0.2.2:
+
+- Fixed bug which selected the wrong debug level in the
+  menubar (Bug #609332).
+- Fixed bug which caused incorrect handling of unavailable
+  level settings (#621762).
+
+
+GRIG 0.2.1:
+
+- Finished configuration modules.
+- Added wheelmouse support.
+- Fixed bug which prevented correct initialization of
+  Mode, Filter and AGC selectors.
+- Fixed bug which caused wrong initialization of the
+  level sliders.
+- Added temporary command line option to enable frequency
+  readback.
+
+
+GRIG 0.2.0:
+
+- Support for Hamlib 1.1.3 (rotator).
+- Preferences dialog to edit radios and rotators.
+- New user druid to guide first-time users through
+  initial setup.
+- Radio controls have been embedded into a Gtk+ widget and
+  can be reused by other Gtk+/Gnome applications.
+- Command line options to override some default settings.
+
+
+GRIG 0.1.0:
+
+- Initial release.
+- Power button.
+- Mode, filter and AGC selector.
+- Frequency display (change frequency by clicking on a digit).
+- Level settings for AF, RF, NR, Squelch and APF (receiver).

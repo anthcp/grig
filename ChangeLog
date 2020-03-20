@@ -1,0 +1,1851 @@
+2015-12-19; Stephane Fillod <fillods@users.sf.net>
+	* Makefile.am, configure.ac:
+	* src/Makefile.am:
+	Keep-up with newer versions of autotools.
+
+	* src/rig-daemon.c, src/main.c:
+	Don't call deprecated glib functions and use the new gthread API.
+
+	* src/main.c, src/rig-selector.c, src/rig-gui-vfo.c:
+	* src/rig-gui-message-window.c:
+	Cleanup compile warnings.
+
+	* po/fr.po:
+	Update from launchpad.net
+
+	* configure.ac, NEWS:
+	Update for 0.8.1
+
+2011-08-20; Stephane Fillod <fillods@users.sf.net>
+	* Makefile.am:
+	Fixes for make distcheck
+
+	* src/Makefile.am:
+	Don't define GDK_DISABLE_DEPRECATED/GTK_DISABLE_DEPRECATED
+	until the code base is converted to more recent gtk.
+
+	* configure.ac, README, TODO, NEWS, AUTHORS:
+	* po/Makevars, po/grig.pot, po/fr.po:
+	Update for 0.8.0
+
+2011-06-24; Stephane Fillod <fillods@users.sf.net>
+
+	* src/rig-gui-lcd.c:
+	Fix VFO indicator not being repainted after window minimization
+
+2011-06-21; Nirgal Vourgère <contact_hamlib@nirgal.com>
+
+	* NEWS:
+	* src/key-press-handler.c:
+	Now using left/right arrows rather than up/down for freq change
+
+2011-06-21; Nirgal Vourgère <contact_hamlib@nirgal.com>
+
+	* src/grig-debug.c:
+	* src/rig-data.c:
+	* rig-gui-message-window.c:
+	* src/rig-selector.c:
+	Removed a bunch of unused vars
+
+	* doc/man/grig.1.in:
+	Escaped addtionnal '-' in man file
+
+	* po/POTFILES.in:
+	Added extra files containing strings to translate
+
+	* src/rig-gui-lcd.[ch]:
+	Added an extra gigahertz digit in lcd display
+
+2010-03-02; Stephane Fillod <fillods@users.sf.net>
+
+	* src/rig-gui-message-window.c:
+	* src/grig-about.c:
+	Replace deprecated calls since Gtk 2.14
+
+	* src/rig-daemon-check.c:
+	* src/rig-data.[ch]:
+	* src/rig-gui-ctrl2.c:
+	Added antenna control.
+
+	* src/rig-gui-lcd.c:
+	Fix buffer access out-of-bounds, found by cppcheck.
+
+	* po/fr.po:
+	Misc update.
+
+
+2010-02-05; Alexandru Csete <oz9aec@gmail.com>
+
+    * src/rig-gui-lcd.c:
+    Fix crash that occurs when mouse is clicked between MHz and kHz digits.
+    Reported as Ubuntu bug 517816.
+
+
+2009-01-21; Alessandro Zummo <a.zummo@towertech.it>
+
+	* src/rig-gui-vfo.c:
+	Added memory/vfo button.
+
+
+2009-01-13; Alessandro Zummo <a.zummo@towertech.it>
+
+	* src/rig-gui-lcd.c:
+	Do not clear frequency if user hits return and
+	the new freq has not been entered.
+
+
+2009-01-13; Alessandro Zummo <a.zummo@towertech.it>
+
+	* src/grig-debug.c:
+	Fixed debug levels
+
+
+2008-12-15; Stephane Fillod <fillods@users.sf.net>
+
+	* src/grig-menubar.[ch]:
+	* src/rig-gui-func.[ch]:
+	* src/Makefile.am:
+	* src/rig-daemon-check.c:
+	* src/rig-daemon.[ch]:
+	* src/rig-data.[ch]:
+	* po/POTFILES.in:
+	Special Function window.
+
+	* src/grig-menubar.c:
+	* src/rig-gui-ctrl2.c:
+	* src/rig-gui-message-window.c:
+	* src/rig-gui-smeter.c:
+	Allow l10n of menu items.
+
+	* configure.ac:
+	* po/fr.po:
+	Translation to French.
+
+
+2008-11-03; Alexandru Csete <oz9aec@gmail.com>
+
+    * configure.ac:
+    Updated Gtk+ and Hamlib requirements.
+
+
+2007-04-14; Alexandru Csete <oz9aec@gmail.com>
+
+    * src/rig-gui-keypad.[ch]:
+    * src/rig-gui-lcd.[ch]:
+    * src/rig-gui.c:
+    * src/rig-gui-smeter.c:
+    * src/rig-gui-vfo.c:
+    * src/Makefile.am:
+    Keypad support from Alessandro Zummo.
+
+
+2007-01-02; Alexandru Csete <oz9aec@gmail.com>
+
+    * src/radio-conf.[ch]:
+    Added data field for config version.
+
+
+2007-12-31; Alexandru Csete <oz9aec@gmail.com>
+
+    * src/rig-selector.[ch]:
+    Added widget showing a list of selected radios. Some basic functionality
+    but far from finished.
+    
+
+2007-12-29; Alexandru Csete <oz9aec@gmail.com>
+
+    * src/compat.[ch]:
+    Added function to retrieve user config directory.
+    
+    * src/radio-conf.[ch]:
+    Added files containing functions for reading and writing .radio files.
+
+
+2007-11-16;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/key-press-handler.[ch]:
+	Added functions to snoop and manage key press events.
+
+	* src/main.c:
+	Use new key press event handler.
+
+	* src/rig-gui-lcd.[ch]:
+	Changed rig_gui_lcd_set_freq_digits and rig_gui_lcd_set_rit_digits
+	to be public in order to allow direct setting of frequency display
+	when managing events other than the ones occuring on the LCD area.
+	
+	
+
+2007-11-15;	Alexandru Csete <oz9aec@gmail.com>
+
+	* NEWS, TODO:
+	Separate NEWS and future improvments.
+
+	* src/Makefile.am:
+	Allow build with Gtk+ 2.12 (GtkTooltips deprecated).
+	
+
+2007-09-15;	Alexandru Csete <oz9aec@gmail.com>
+
+	* doc/um/xml:
+	Added files that will eventually become a real user manual.
+
+
+2007-01-17;	Alexandru Csete <oz9aec@gmail.com>
+
+	* Makefile.am:
+	Include win32 files in source distribution (bug #1630052).
+	
+
+2007-01-07;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-debug.c:
+	Use g_get_current_time() instead of gettimeoftheday().
+
+	* src/main.c:
+	Use portable pixmap_file_name() instead of PACKAGE_PIXMAP_DIR, which
+	only works on Unix (bug #1629905).
+	Removed other traces of PACKAGE_PIXMAP_DIR too.
+
+	* src/rig-gui-lcd.c:
+	* src/rig-gui-smeter.c:
+	Removed traces of PACKAGE_PIXMAP_DIR.
+
+	* win32:
+	Added files related to win32 build.
+	
+
+2006-12-16;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.c:
+	Set 'new' flags to TRUE when receiving new values for mic gain and 
+	compressor (bug #1613622).
+
+	* src/rig-daemon.[ch]:
+	Fixed bug that caused wrong handling of RF gain and IF shift
+	(bug #1613622). Give RIG_CMD_AF higher priority to avoid jumpy
+	behaviour (bug #1616926).
+
+	* configure.ac, NEWS:
+	Updated for 0.7.2
+	
+2006-07-24;	Alexandru Csete <oz9aec@gmail.com>
+
+	* Makefile.am:
+	Explicitly create $(DESTDIR)$(pkgdatadir) before trying to install.
+	This fixes bug #1523367.
+
+	* configure.ac:
+	Updated version number.
+	
+
+2006-07-07;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.[ch]:
+	Added missing support functions.
+
+	* src/rig-gui-tx.c:
+	Implemented RF power and ALC.
+
+	* src/rig-daemon.c:
+	Implemented missing commands.
+
+	* src/grig-about.c:
+	Updated to use GtkAboutDialog.
+
+	* src/compat.c:
+	Fix pixmaps directory.
+	
+
+2006-07-06;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-tx.c:
+	Implemented TX levels with the exception of RFPOWER and ALC.
+	
+
+2006-07-02;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon-check.c:
+	Store IF shift range and step in rig-data.
+
+	* src/rig-data.[ch]:
+	Store IF shift range and step.
+
+	* src/rig-gui-rx.c:
+	Finished implementation. Can not test until daemon has support for it.
+
+	* src/rig-daemon.c:
+	Added support for RX level controls. Cycle also includes TX level controls.
+	
+
+2006-07-01;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-rx.[ch]:
+	Added files.
+
+	* src/rig-gui-tx.[ch]:
+	Added files.
+
+	* src/grig-debug.[ch]:
+	Added funstion to read the current debug level.
+
+	* src/grig-menubar.c:
+	Use grig_debug_get_level instead of direct reference to debug var in
+	main.c. Moved UIManager to be global private so that we can access the
+	individual menu items after creation. Added functions to force the value
+	of the RX, TX and CW level controls.
+	
+
+2006-06-30;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.[ch]:
+	Added support for all missing level settings.
+
+	* src/rig-daemon-check.c:
+	Added checks for remaining levels.
+
+	* src/rig-daemon.h:
+	Added new level commands.
+
+	* doc/devnotes/commands.txt:
+	Updated.
+	
+
+2006-06-26;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.ac:
+	Don't use AC_DEFINEs to define locale, data and pixmapsdirs because that
+	does not work with autoconf 2.59e anymore (was the wrong way to do it
+	according to GNU Coding Std).
+
+	* src/Makefile.am:
+	Added locale, data and pixmapdir definitions:
+	-DPACKAGE_DATA_DIR=\""$(datadir)/grig"\" \
+	-DPACKAGE_PIXMAPS_DIR=\""$(datadir)/pixmaps/grig"\" \
+	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\"
+	Pixmaps will thus go to /usr/local/share/pixmaps/grig instead of
+	/usr/local/share/grig/pixmaps by default.
+
+	* pixmaps/Makefile.am:
+	Redefined pixmapsdir to $(datadir)/pixmaps/grig
+	
+
+2006-03-28;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Sleep between commands only if the last command has been executed.
+	Added hamlib error message when a command failes to execute.
+
+	* src/grig-debug:
+	Use local debug level in order to be able to filter grig debug messages
+	(bug #1457361).
+
+	* src/grig-menubar.c, src/main.c:
+	Use grig_debug_set_level instead of rig_set_debug.
+
+
+2006-03-27;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Generate log message when rig_daemon_set_suspend is called.
+
+	* src/rig-state.c:
+	Finished save/load state of supported parameters.
+
+	* NEWS:
+	Updated with information about saving and restoring rig state.
+
+	* src/rig-daemon-check.c:
+	Fixed bug, which gave the error message "Can not find VFO list for this
+	rig! Bug in backend?" if the rig did not have any of the rig_set_vfo or
+	rig_get_vfo functions (bug #1440876).
+
+	* src/grig-menubar.c:
+	Modified menu utems in View menu to toggle items.
+	
+
+2006-03-23;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Nailed even more potential flicker bugs. Added function to obtain hamlib
+	id of radio.
+
+	* src/rig-utils:
+	Added function to check file name for extension.
+
+	* src/rig-state.c:
+	Done some work on save state. Rig ID is already saved, all I need is to
+	add the remaining parameters and the save function is done.
+	
+
+2006-03-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Fixed bug, which caused the ptt and pstat readings to be overwritten
+	by the old set values every time the SET command was executed. Added
+	and extra SET_PTT and GET_PTT command to both the RX and the TX cycle.
+	Same bug found for SET_FREQx (may fix bug #1388342?).
+
+	* src/rig-daemon-check.c:
+	Check and store maximum RF power level.
+
+	* src/rig-data.c, src/rig-data.h:
+	Added possibility to store maximum RF power level (needed to scale the
+	power meter).
+
+	* src/rig-gui-smeter.c:
+	Implemented power meter scale. Select best scale automatically.
+
+
+2006-03-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-state.c:
+	Finished load and save state callbacks.
+
+
+2006-03-19;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-state.c, src/rig-state.h:
+	Added files.
+
+	* src/Makefile.am:
+	Added new files to list.
+
+	* src/grig-menubar.c:
+	Enable Load and Save State entries.
+	
+	
+2006-03-17;	Alexandru Csete <oz9aec@gmail.com>
+
+	* doc/userman/latex:
+	Added a few files containing a skeleton for a user manual.
+
+
+2006-03-16;	Alexandru Csete <oz9aec@gmail.com>
+
+	* COPYING:
+	Updated the address of FSF.
+
+	* src/*.c, src/*.h:
+	Update year and replace FSF address with website.
+
+	* doc/man/grig.1.in:
+	Added minimal info about the debug handler.
+
+
+2006-03-12;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window.c:
+	Implemented clear message list signal. Added message source to
+	summary. Tested using in near-real-time by piping messages to file
+	and at the same time monitoring with tail and reading into message
+	list. Uncertain whether this would work in wintendo.
+
+	* src/grig-menubar.c:
+	Removed unused config function. Disabled menu items that have not been
+	implemented.
+
+	* src/main.c, doc/man/grig.1.in:
+	Changed --rig-device back to --rig-file. It's best to keep compatibility
+	with rigctl as much as possible.
+
+
+2006-03-11;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-debug:
+	Include <glib/gprintf.h> to avoid compiler warning. Changes separator
+	to ";;". Changed grig_debug_local to use variable argument list in order
+	to save code throughout grig.
+
+	* src/rig-gui-vfo.c:
+	Modified to use grig debug handler instead of the one from Hamlib.
+
+	* src/rig-daemon.c, src/rig-daemon-check.c:
+	Modfied to use grig debug handler and use i18n for strings.
+
+	* src/rig-gui-message-window.c:
+	Implemented reading debug messages from log files. Still to do is
+	"Clean" and some visual fixups.
+
+
+2006-02-27;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/Makefile.am:
+	Added new files to list.
+
+	* configure.ac:
+	Require hamlib 1.2.5
+
+	* src/grig-debug.c, src/grig-debug.h:
+	Implemented logging source but there is no code to explicitly save to
+	log file. The messages are printed to stderr, so the log can be saved
+	that way.
+
+	* src/main.c:
+	Use new grig-debug infrastructure.
+	
+	
+2006-02-24;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-debug.c, src/grig-debug.h:
+	Added files containing new debug handler. The new debug handler	will
+	format the debug messages coming from hamlib, print them on stderr and,
+	if requested, save them to a log file. The log file must be specified
+	on the command line.
+
+
+2006-02-23;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c, doc/man/grig.1.in:
+	Changed --rig-file to --rig-device. We keep the former for compatibility
+	reasons but issue a warning message to tell the user about this.
+
+
+2006-02-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window:
+	Moved column definition from header to source file. Add debug messages
+	to the the message list. Works all right but needs a lot of optimisation.
+	
+
+2006-01-16;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window, src/main.c:
+	Changed back to original hamlib implementation of debug message
+	handler. As Stephane pointed out, it was wrong use of the va_list
+	which caused the misbehaviour.
+
+
+2005-12-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Added RIG_CMD_SET_FREQ_1 and RIG_CMD_GET_FREQ_1 to the default TX
+	cycle to allow change of frequency while the TX is on. On the FT-817,
+	however, it seems that I can not control frequency in TX mode. Bug
+	report opened #1388342.
+
+
+2005-12-19;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/menubar.c:
+	Moved message window to View menu, band map and spectrum to tools menu.
+
+	* src/rig-gui-message-window.c:
+	Changed debug callback not to use va_list but expect a simple char * 
+	- proposition to modify hamlib interface sent to hamlib-developer.
+	Added code to update message statistics.
+	
+
+2005-11-25;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window.c:
+	Added code to create list view. Need some minor mods to allow access
+	to GtkListStore.
+	
+
+
+2005-11-23;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window.c:
+	Create message window skeleton.
+
+
+2005-11-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message_window.c:
+	Added code to show and hide window.
+
+
+2005-11-14;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-menubar.c:
+	Added RIG_FUNC and software memory menu entries.
+	Use stock pixmaps where apropriate.
+
+	* src/rig-gui.c:
+	Change lcd box spacing for better layout.
+
+
+	
+2005-11-11;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-vfo.c:
+	Added split button. Rearranged button layout.
+
+	* src/rig-data.h, src/rig-data.c:
+	Added support for SPLIT ON/OFF. Currently passes RIG_VFO_RX and RIG_VFO_TX
+	as parameters to hamlib.
+
+	* src/rig-daemon.c, src/rig-daemon.h:
+	Added RIG_CMD_SET_SPLIT and RIG_CMD_GET_SPLIT.
+
+	* src/rig-daemon-check.c:
+	Check for set_split_vfo and get_split_vfo.
+
+
+
+2005-11-10;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui.c:
+	Don't include level controls in main window. They will be in separate
+	windows.
+
+	* src/grig-menubar.c:
+	Added View menu. No actions yet.
+
+	* src/rig-data.c, src/rig-data.h,
+	* src/rig-daemon.c, rc/rig-daemon.h, src/rig-daemon-check.c:
+	Added support for VFO COPY and EXCHANGE.
+	
+	
+2005-11-08;	Alexandru Csete <oz9aec@gmail.com>
+	
+	* src/compat.c, src/compat.h:
+	Added files containing utilities for data directory retrieval.
+	
+
+2005-09-29;	Alexandru Csete <oz9aec@gmail.com>
+	
+	* src/rig-gui-lcd.c:
+	Added readback of VFO.
+
+	* src/rig-daemon.h, src/rig-daemon.c:
+	Added support for RIG_CMD_VFO_TOGGLE, ie. RIG_OP_TOGGLE.
+
+
+2005-09-28;	Alexandru Csete <oz9aec@gmail.com>
+	
+	* src/rig-gui-vfo.c, src/rig-gui-vfo.h:
+	Added files containing VFO controls.
+
+	* src/rig-gui.c:
+	Use rig-gui-vfo.
+
+	* src/rig-data.c, src/rig-data.h:
+	Added support for RIG_OP_TOGGLE.
+
+	* src/Makefile.am:
+	Added rig-gui-vfo to build list.
+
+
+2005-09-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info-data.h:
+	Added RIG_FUNC_STR and RIG_OP arrays.
+
+	* src/rig-gui-info.c:
+	Added RIG_FUNC and VFO_OP settings.
+	
+
+
+2005-09-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-buttons,
+	* src/rig-data,
+	* src/rig-daemon,
+	Added support for RIG_FUNC_LOCK.
+
+	* src/rig-daemon-check:
+	Added generic checks for rig_set_func and rig_get_func
+	availabilities.
+	
+
+2005-09-20;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window:
+	Added prototype for debug callback function.
+	
+
+2005-09-06;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c, src/rig-daemon-check.c:
+	Added additional check in rig_daemon_check_mode to ensure that
+	the correct frequency range for the current mode is selected and
+	not just the first one found. Also, get the frequency resolution
+	for the current mode. Also store the list of all modes in rig-data.
+
+	* src/rig-data.c, src/rig-data.h:
+	Added bitfield of all supported modes including a get_ function.
+
+	* src/rig-gui-ctrl2.c:
+	Only show supported modes in the mode selector combo.
+
+	* NEWS:
+	Updated.
+	
+
+2005-08-25;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Fixed bug which caused grig to show WIDE instead of NORMAL
+	passband width in those cases where the rig does not have any
+	particular WIDE passband and the rig_passband_wide function
+	returns 0, which also happens to be the value of the RIG_PASSBAND_NORMAL
+	macro.
+
+	* src/rig-daemon-check.c:
+	Power button should now really work as claimed :o)
+	
+
+2005-08-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Suspend all but RIG_CMD_SET_PSTAT command while the rig is in
+	power OFF state.
+
+	* doc/man/grig.1.in:
+	Added a few sentences concerning the new handling of the
+	power OFF state.
+	
+
+2005-08-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon-check.c:
+	Fixed very nasty bug in checking the availability of level
+	set/get functions (bug #1266068).
+	Improved RIT and XIT checking code.
+
+	* src/rig-gui-info.c:
+	Fixed a bug which caused incorrect handling of empty ATT and
+	PREAMP arrays. In worse cases the program caused memory
+	corruption (bug #1266071).
+	Fixed a bug which caused a crash while reading the tuning
+	step lists (bug #1266071).
+
+	* src/rig-data.c, src/rig-data.h:
+	Added has_set_rit and has_set_xit.
+
+	* src/rig-gui-lcd.c:
+	Display initial RIT value even if only set_it is available.
+	
+	* NEWS:
+	Updated.
+
+2005-08-16;	Alexandru Csete <oz9aec@gmail.com>
+
+	* grig.spec.in:
+	Fix erroneous pixmap drectories.
+	
+
+2005-08-10;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-smeter.h:
+	Adjusted DEF_TVAL and DEF_FALLOFF based on tests using a
+	FT-817ND. The meter behaves quite the same using both 4800,
+	9600 and 38400 baud. It would, however, improve the real-time
+	feeling if the raise time would be different (lower) than the
+	fall-off time.
+
+
+2005-07-25;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon, src/rig-daemon.h, src/main.c:
+	Disable POWER and PTT buttons by default. Use command line
+	options to enable them at run-time.
+
+	* doc/man/grig.1.in:
+	Added description of the new command line switches.
+	
+
+2005-06-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-message-window.c, src/rig-gui-message-window.h:
+	Added files.
+
+	* src/grig-menubar.c:
+	Added menu entry for message window. Also added menu items for
+	saving and loading the rig state.
+
+	* src/Makfile.am:
+	Added message window files.
+
+
+2005-06-16;	Alexandru Csete <oz9aec@gmail.com>
+
+	* doc/man/grig.1.in:
+	Corrected one more error.
+
+	* src/rig-daemon.c:
+	Corrected a spelling error.
+
+	* src/grig-about.c:
+	Experimented with new GtkAboutDialog. Will stick with the
+	old one for a while.
+
+
+2005-06-15;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c, src/rig-daemon.h:
+	Changed shut-down procedure to wait until daemon process
+	actually finishes. There is, however, still a timeout of
+	10 seconds, in case something goes wrong. Change command
+	table to flat arrays. This also allows faster reaction 
+	when PTT is toggled. Added the possibility to suspend
+	command execution without shutting down the daemon.
+
+	* doc/man/grig.1.in:
+	Corrected wrong command line argument for no-thread option.
+
+	* configure.ac:
+	Increment version number to 0.5.cvs
+	Require Gtk+ 2.6
+
+	* NEWS:
+	Added some news for 0.5
+
+
+2005-06-03;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Use g_usleep instead of usleep to make code more portable.
+
+	* configure.ac:
+	Increment micro version and remove check for unistd.h
+	
+
+2005-02-12;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Implemented timeout based daemon process. The timeout
+	delay is 2*cmd_del*nb_of_cmd.
+	Only poll selected setting when in TX mode (power, alc
+	or swr but not all). Modified default TX cycle
+	accordingly. Decreased command delay factor for TX mode
+	from 3 to 2.
+	Added function to acquire the command delay. This allows
+	the GUI to adjust the callback delays for the widgets.
+
+	* src/rig-gui-smeter.c, src/rig-gui-smeter.h:
+	Added function to acquire the current meter setting
+	in TX mode. This allows the daemon to decide which
+	level to poll when the rig is in TX mode.
+
+	* src/rig-gui-lcd.c:
+	Check frequency for lower limit to avoid flicker
+	(bug #1082319).
+	
+	* doc/man/grig.1.in:
+	Updated man page with info about the -n or --nothread
+	option.
+
+	* configure.ac:
+	Updated version to 0.4.2
+
+	* src/*:
+	Updated year.
+	
+	* NEWS:
+	Updated info.
+
+	
+2005-02-11;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c:
+	Added --nothread command line option.
+
+	* src/rig-daemon.c, src/rig-daemon.h:
+	Added (empty) branch for the --nothread option.
+
+
+2005-02-09;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Added error handling when creation of daemon process
+	is not successful.
+
+	
+2005-02-02;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.h, src/rig-daemon.c:
+	Replaced cycle delay with a default command delay. The
+	delay in TX mode is three times the delay in RX mode.
+	Added possibility for user defined delay.
+
+	* src/main.c:
+	Added command line option for command delay.
+
+	* doc/man/grig.1.in:
+	Added section about comamnd delays and buggy power off
+	state.
+
+	* Makefile.am:
+	Added AUTHORS, NEWS, COPYING, README and ChangeLog to
+	install data.
+
+	* NEWS:
+	Updated with some 0.4.2 info.
+	
+
+2005-02-01;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.ac:
+	Define PACKAGE_LOCALE_DIR. Increment version number.
+
+
+2005-01-27;     Alexandru Csete <oz9aec@gmail.com>
+
+	* pixmaps/Makefile.am:
+	Fixed typo which caused pixmaps not to be included in
+	datapack.
+
+	* configure.ac:
+	Incremented version number.
+
+
+2005-01-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-smeter-conv.c, src/rig-gui-smeter-conv.h:
+	Implemented linear conversion for TX scale. No need for
+	polynomial fit since TX scale is linear.
+
+	* src/rig-gui-smeter.c:
+	Enabled TX meter. Disable scale selector.
+
+	* src/rig-gui-smeter.h:
+	Increased default fall-off speed and frames per second.
+
+	* src/grig-about.c:
+	Removed empty notebook pages.
+
+	* NEWS:
+	Updated.
+
+	* configure.ac:
+	Changed versionnumber to 0.4
+
+
+2005-01-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.c, src/rig-data.h:
+	Added get functions for tx power, swr and alc.
+
+	* src/rig-gui-smeter.c:
+	Added code to read meter value for tx power, swr and alc.
+
+	* doc/man/grig.1.in:
+	Updated year.
+	
+
+2005-01-20;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.h:
+	Removed TX levels that are not available via rig_get_level.
+
+	* src/rig-data.c, src/rig-daemon.c, src/rig-daemon.h:
+	Added support for TX power, SWR and ALC.
+
+	* src/rig-daemon.h, src/rig-daemon.c:
+	Change MAX_CMD_PER_CYCLE from 5 to 6.
+
+	* src/rig-data.c, src/rig-data.h:
+	Added has_get for ALC, SWR and RFPOWER.
+
+	* src/rig-gui-smeter-conv.c, src/rig-gui-smeter-conv.h:
+	Added function to convert floating point number between 0.0 and 1.0 to
+	s-meter angle. Still need to define conversion parameters.
+
+
+2005-01-07;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.c:
+	Fixed a mis-spelling.
+
+	* src/rig-gui-smeter.h:
+	Updated doxygen comments for smeter_scale_t.
+	
+
+2004-12-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon-check.c:
+	Worked on a fix for bug #1082325, which causes misbehaviour if the rig
+	is OFF when grig is started. Basically, only the powerstatus is tested
+	for real, all other setting availabilities are obtained from the rig
+	caps. If power status is not available from rig, RIG_POWER_ON is stored
+	in the rig data structure.
+
+	* src/rig-daemon.c:
+	Only get/set power status if rig is in power off state.
+
+	* doc/man/grig.1.in:
+	Removed section saying that RIG must be powered ON.
+
+
+2004-12-12;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c, src/rig-daemon.h:
+	Added rigconf parameter to rig_daemon_start.
+
+	* src/main.c:
+	Added check for pixmap files to exit cleanly with an error message if
+	installation is incomplete (bug #1057427). Changed pixmap paths from
+	PACKAGE_DATA_DIR to PACKAGE_PIXMAPS_DIR.
+
+	* src/grig-about.c:
+	Changed pixmap paths from PACKAGE_DATA_DIR to PACKAGE_PIXMAPS_DIR.
+
+	* src/rig-gui-lcd.c:
+	Changed pixmap paths from PACKAGE_DATA_DIR to PACKAGE_PIXMAPS_DIR.
+
+	* src/rig-gui-smeter.c:
+	Changed pixmap paths from PACKAGE_DATA_DIR to PACKAGE_PIXMAPS_DIR.
+
+	* doc/man/grig.1.in:
+	Added debug level info and a warning that rig must be turned ON before
+	starting grig. Also added description of --set-conf command line
+	option.
+
+
+2004-12-11;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.ac:
+	Added HAMLIB_VERSION define.
+
+	* src/main.c, src/grig-about.c, src/rig-gui-lcd.c:
+	* src/rig-gui-smeter.c:
+	Include config.h
+
+	* src/main.c:
+	Added --set-conf command line option (bug #1082329). Has no effect yet.
+
+
+2004-12-10;	Alexandru Csete <oz9aec@gmail.com>
+
+	* config.guess, config.sub, configure.in:
+	Removed files.
+
+	* configure.ac:
+	Added file based on gnome-hello template and xlog.
+
+	* .cvsignore:
+	Added file.
+
+	* autogen.sh:
+	Modified according to gnome-hello template. Does not use gnome-autogen
+	though.
+
+	* COPYING:
+	Added file.
+
+	* Makefile.am:
+	Modified according to gnome-hello template.
+
+	* doc/.cvsignore:
+	Added file.
+
+	* doc/man/.cvsignore:
+	Added file.
+
+	* pixmaps/.cvsignore:
+	Added file.
+
+	* po/.cvsignore:
+	Added file.
+
+	* po/Makevars:
+	Removed file.
+
+	* src/.cvsignore:
+	Added file.
+
+	* pixmaps/Makefile.am:
+	Added file.
+
+	* acconfig.h:
+	Removed file.
+
+	* acinclode.m4:
+	Removed file.
+	
+
+2004-12-06;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c:
+	Don't translate strings containing UTF-8 octal codes.
+	
+
+2004-12-05;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in:
+	Bumped version number.
+	
+
+2004-12-04;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in:
+	Removed possibility to fall back to the old style hamlib check.
+	hamlib.pc is required to detect hamlib settings (cf. bug #1078800).
+
+	* AUTHORS:
+	Updated with proper credits.
+
+	* NEWS:
+	Updated.
+	
+
+2004-12-03;	Alexandru Csete <oz9aec@gmail.com>
+
+	* grig.desktop:
+	Removed file.
+	
+
+2004-12-02;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-gtk-workarounds.c, src/griggtk-workarounds.h:
+	Created files. Intended to contain various workaround tricks for Gtk+
+	bugs and limitations. Currently it contains funtions to allow tooltips
+	with the GtkComboBox widget.
+
+	* src/rig-guit-ctrl2.c, src/rig-gui-buttons.c:
+	Added tooltips for combo boxes using the new utilities.
+	Fixes bug #1002573.
+
+	* src/Makefile.am:
+	Added new files to the list.
+
+
+2004-12-01;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in:
+	Added configure option to enable coverage report generation by gcov.
+
+
+2004-11-30;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c:
+	Catch SIGTERM, SIGINT and SIGABRT and try to make a clean exit.
+
+	* doc/man/grig.1.in:
+	Fixed a typo.
+
+
+2004-11-27;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in, grig.1.in:
+	Moved man page to doc/man/ subdirectory. Added more text to man page.
+
+	* doc/man/Makefile.am, doc/Makefile.am:
+	Created files. Man page now installed correctly (fixes bug #1065828).
+
+	* README:
+	Updated.
+
+	* Makefile.am:
+	Removed explicit handling of man page.
+	
+
+2004-11-23;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c:
+	Added rig_daemon.get_brand and rig_daemon_get_model functions. Ideally,
+	these function should have been in rig-data but since the only user at
+	the moment is main.c which already has visibility on rig-daemon, it was
+	easiest to implement them here.
+	Fixed a typo.
+
+	* src/main.c:
+	Use new get_brand and get_model functions. This fixes bug #1069293.
+
+	* src/rig-gui-info.c:
+	Changed packing options for tuning step frame.
+
+	* src/rig-gui.c:
+	Don't include the levels widget since it contains nothing yet.
+
+
+2004-11-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c:
+	Finished preamp and att info frame and reorganized main container.
+
+
+2004-11-19;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.c:
+	Fixed bug which caused the new secondary frequency to be sent to
+	the daemon but not registered in the readback buffer until next
+	read cycle.
+
+	* src/rig-gui-info.c:
+	Added skeleton for front end info frame (attenuator and preamp).
+
+
+2004-11-15;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in, Makefile.am:
+	autogen.sh was (again!) behaving stupid again. Removed all output
+	requests for po and m4.
+
+	* src/rig-gui-info-data.h:
+	Added string representation for mode symbolic references.
+
+	* src/rig-gui-info.c:
+	Added tuing step info frame.
+	
+
+2004-11-14;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c, src/grig-about.c, src/grig-menubar.c,
+	* src/main.c, src/rig-data.c, src/rig-gui-buttons.c,
+	* src/rig-gui-ctrl2.c,
+	* src/rig-gui-lcd.c, src/rig-gui-levels.c, src/rig-gui-smeter.c:
+	Replaced support.h with glib/gi18n.h (bug #1042301).
+
+	* src/support.h:
+	Removed file since we use glib/gi18n.h instead.
+
+	* Makefile.am:
+	Removed support.h from list.
+
+
+2004-11-13;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c:
+	Added interface info frame.
+
+
+2004-11-12;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c:
+	Changed level checkboxes to labels. Fixed bug which caused the not all
+	levels were correctly displayed. Fixed bug which caused the scrolled
+	window to be non-functional (the new scrolled window api does not use
+	gtk_container_add but gtk_scrolled_window_add_with_viewport).
+	
+
+2004-11-10;	Alexandru Csete - IC177 <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c:
+	Rewrote create_levels to use a vertical table in a scrolled window.
+
+	* src/rig-gui-info-data.h:
+	Added string representations for port caps family.
+
+
+2004-11-09;	Alexandru Csete <csete@users.sourceforge.met>
+
+	* src/rig-gui-info.c:
+	Added offset and level info widgets.
+
+	* src/rig-gui-info-data.h:
+	Added file. Contains some constant data definitions.
+
+	* src/Makefile.am:
+	Added new file.
+
+
+2004-11-05;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-ctrl2.c:
+	Removed note regarding the discrepacy between hamlib and grig symbillic
+	references for AGC settings (they are the same now).
+
+	* grig.1.in, grig.spec.in:
+	Updated.
+	
+	* src/rig-utils.c:
+	Fixed bug which caused the last three modes (ECLSB, ECUSB and FAX) to
+	be discarded as valid modes.
+
+	* src/rig-daemon.c:
+	Fixed bug which caused the pass band to be set to 1Hz each time the
+	mode was changed. Replaced XIT comamnds with VFO comamnds.
+
+	* src/rig-daemon-check.c:
+	Set smeter value to -54dB if comamnd is not available. Added code to
+	storeavailableVFOs in rig-data.
+
+	* src/rig-data-c, src/rig-data.h:
+	Added rig_data_set_vfos and rig_data_get_vfos to store the bitfield of
+	available VFOs.
+
+	* src/rig-gui-lcd.c:
+	Ahow true VFO on LCD.
+	
+	
+2004-11-04;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-buttons.c:
+	Added preamp selector. Added code to disable controls if read or write
+	ability not present.
+
+	* src/rig-data-c, src/rig-data.h:
+	Added has_get and has_set for power status and PTT.
+
+	* src/rig-daemon.c:
+	Added RX matrix for debug mode.
+
+
+2004-11-02;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.c, src/rig-data.h:
+	Added global private data to store ATT and PREAMP levels. Also added
+	unctions to set and read these arrays. Also added functions to get
+	the index of a specific value (useful to the GUI).
+
+	* src/rig-daemon-check.c:
+	Added code to initialise attenuator and preamp arrays.
+
+	* src/rig-gui-buttons.c:
+	Finished ATT selector code.
+
+
+2004-10-30;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-info.c:
+	Added doxygen description.
+
+	* src/rig-data.c, src/rig-data.h:
+	Added attenuator and preamp related fields and functions. Also added
+	has_get_agc and has_set_agc. Minor rearrangements in the code. Added
+	a comment about the incompleteness of the package.
+
+	* src/rig-daemon.h:
+	Added RIG_CMD_GET_ATT, RIG_CMD_SET_ATT, RIG_CMD_GET_PREAMP,
+	RIG_CMD_SET_PREAMP to the list of modes. Include unistd.h to avoid
+	compiler warning about implicit declaration of usleep.
+
+	* src/rig-daemon.c:
+	Added ATT and PREAMP command handling.
+
+	* src/rig-daemon-check.c:
+	Added checks for ATT and PREAMP under the levels checking function.
+
+	* src/rig-gui-buttons.c:
+	Added RIG_GUI_ATT_SELECTOR and RIG_GUI_PREAMP_SELECTOR to the list of
+	object IDs.
+
+	* src/rig-gui-levels.c, src/rig-gui-levels.h:
+	Added files. Contain level controls hidden using a GtkExpander widget.
+
+	* src/Makefile.am:
+	Added new files to list.
+
+	* src/rig-gui.c:
+	Include level controls.
+	
+
+2004-10-29;	Alexandru Csete - SK568 <csete@uers.sourceforge.net>
+
+	* src/main.c:
+	Removed some useless comments from command line option handlig code and
+	compressed code a little.
+
+	* NOTE:
+	error in doxygen comment in rig.h:rig_caps saying rotator type instead
+	of rig_type.
+	
+
+2004-10-26;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in:
+	Added --disable-hardware option to disable any hamlib operations except
+	rig_init and rig_cleanup (usefull to test rig caps and such).
+
+	* src/rig-daemon-check.c:
+	Added '\n' to the end of error messages.
+
+
+2004-10-25;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-lcd.c:
+	Fixed a bug which caused incorrect RIT jumps especially when the RIT
+	sign chnges (eg. -0.40 + 1.00 gave 0.60 instead of 0.40). Added utility
+	function to explicitly convert RIT/XIT values to byte array.
+
+	* configure.in:
+	Added summary of library versions (hamlib, glib, gthread, gdk and gtk).
+
+
+2004-10-24;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-lcd.c:
+	Fixed bug where RIT could jump from -9.99 to 9.99 kHz. 
+
+
+2004-10-23;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-about.c:
+	Added missing ';' character (caused compiled error).
+
+	* src/main:
+	Cleaning. Removed unused variables and split lines which were too long.
+
+	* src/rig-gui-lcd.c:
+	Reduced display width by one small digit.
+
+	* src/rig-gui-ctrl2.c, src/rig-gui-ctrl2.h:
+	Added files. Mode, filter and AGC selector moved into this container.
+	This container is displayed on the right side of the LCD.
+
+	* src/rig-gui-buttons.c:
+	Removed mode, filter and AGC selectors.
+
+	* src/Makefile.am:
+	Added new files to the list.
+
+	* src/rig-daemon.c:
+	The passband width code was buggy it made implicit conversion from
+	frequency to rig_data_pbw_e. Fixed using rig_passband_xxx hamlib
+	functions. Changed new flags to be reset to FALSE even if write error
+	ocurres (maybe I will change that back). get variables are always set
+	to the value of set after writing new value.
+	
+
+2004-10-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-menubar.c:
+	Removed about-callback since grig_about_run an be used directly as
+	menu callback.
+
+	* src/grig-about.c:
+	Added dialog window, logo and some info.
+
+	* grig.spec.in:
+	Added some info.
+	
+
+2004-10-20;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-menubar.c:
+	Added debug level menu items.
+
+	* src/rig-gui-info.c, src/rig-gui-info.h:
+	Added files. Contains popup dialog showing rig-caps.
+
+	* src/Makefile.am:
+	Added new files to list.
+
+
+2004-10-19;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-menubar.c, src/grig-menubar.h:
+	Remove rotator and GConf related code. Created menubar using GtkAction
+	achitecture.
+
+	* src/rig-gui.c:
+	Include menubar in the GUI.
+	
+	* src/main.c:
+	Rearranged some code in the creation of the main window so that the
+	window is ceated before the creation of the menubar.
+	
+
+2004-10-18;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c:
+	Added grig_show_help, grig_show_version, grig_list_add and
+	grig_list_compare. Implemented grig_list_rigs. Command line arguments
+	are now working (all of them).
+
+
+2004-10-17;	Alexandru Csete - SK1563 <oz9aec@gmail.com>
+
+	* src/main.c:
+	More work on command line arguments.
+	
+
+2004-10-15;	Alexandru Csete - CDG <oz9aec@gmail.com>
+
+	* src/main.c:
+	Begun work on command line arguments. Added list of args and while loop
+	skeleton. Had to stop because departure was only 30 min delayed instead
+	of the first announced 2h30.
+	
+
+2004-10-11;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c, src/rig-daemon.h:
+	Changed rig_daemon_start interface to take port, speed and CIV address
+	as optional parameters.
+
+	* src/main.c:
+	Modified in accordance with the new rig_daemon_start interface.
+	Removed any rotator related code.
+	
+
+2004-10-10;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-lcd.c:
+	Fixed bug which cause grig to crash when user clicked on RIT decimal
+	separator. Modified code to take new pixmaps with '-' into account.
+	Also found and fixed a memory leak in rig_gui_lcd_set_rit_digits.
+	Added function to draw miscellaneous text on the display.
+	Updated design docs accrdingly.
+	
+	* pixmaps/digits_normal.png, pixmaps/digits_small.png:
+	Added '-'sign.
+
+	* configure.in:
+	Changed version number. Added checks for sys/time.h unistd.h getopt.h
+
+
+2004-10-09;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.c, src/rig-data.h:
+	Added has_set_freq and macros to wrap set_freq.
+	Added min/maxfields and functions for RIT and XIT.
+
+	* src/rig-gui-lcd.c:
+	Finished tuning code for both frequency and RIT/XIT. Only RIT is
+	suported at the moment. Also added RIT/XIT mode selection field to
+	the main ata structure.
+
+	* src/rig-daemon-check.c:
+	Store RIT and XIT ranges when check for functionalities.
+	
+
+2004-10-08;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-lcd.c:
+	Added more event handlig code to catch mouse events on the LCD
+	display. Expose event call has been merged into this code.
+	
+
+2004-10-07;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-lcd.c:
+	Added code to display small digits and removed first dot between
+	MHz and kHz (too confusing). Aded RIT/XIT display. Added bug text
+	that it does not work with frequencies above 1 GHz.
+
+	* src/rig-data.c, src/rig-data.h:
+	Added rig_data_has_get_rit() and rig_data_has_get_xit().
+
+
+2004-10-06;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in, Makefile.am:
+	Even more build environment fixes :(
+
+	* src/rig-data.c, src/rig-data.h:
+	Added rig_data_has_get_freq1 and rig_data_has_get_freq2.
+
+	* src/rig-gui-lcd.c, src/rig-gui-lcd.h:
+	Begun to add and update digits. Frequency readback tested with RPC.
+	Small digits and RIT/XIT still to be done. Adjusted fields in lcd
+	structure accordingly.
+	
+
+2004-10-05;	Alexandru Csete <oz9aec@gmail.com>
+
+	* NEWS:
+	Readded file currently containing primary objectives for this 
+	development baseline.
+
+	* src/rig-gui-lcd.c:
+	First draft of calculating digit positions. Can be optimized or made
+	nicer.
+	
+
+2004-10-04;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c, src/rig-gui-lcd.c, src/rig-gui-smeter.c:
+	Replaced "/" with G_DIR_SEPARATOR_S.
+
+	* src/rig-gui-lcd.c:
+	Added rig_gui_lcd_calc_dim which will calculate frequently used sizes
+	and positions.
+	
+
+2004-10-03;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.h:
+	Added fields to store frequency limits and tuning step for the current
+	mode. The fields are fmin, fmax and fstep.
+
+	* src/rig-data.c:
+	Added rig_data_get_fmax, rig_data_get_fmin and rig_data_get_fstep.
+
+	* src/rig-daemon.c, src/rig-daemon-check.c:
+	Added code to update frequency limits and tuning step at initialization
+	and each time the mode is acquired.
+
+
+2004-10-02;	Alexandru Csete <csete@users.sourcforge.net>
+
+	* src/rig-gui-smeter.c, src/rig-gui-smeter.h:
+	Finished implementation of s-meter using GtkDrawingArea. Added code to
+	test s-meter with random numbers. Adjusted the default constants and
+	updated design docs.
+
+
+2004-10-02;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-meter.c, src/rig-gui-smeter.h, src/rig-gui-smeter-conv.c,
+	* src/rig-gui-lcd.c, src/rig-gui-lcd.h, src/rig-gui-buttons.c,
+	Removed GNOME and GConf dependencies so that files can be compiled
+	with Gtk+ only. Replaced code which is deprecated in Gtk+ 2.4
+
+	* src/grig-menu.c:
+	Changed file name to grig-menubar.c, added corresponding header file
+	and removed GNOME dependencies.
+
+	* src/Makeile.am:
+	Updated list with new files.
+
+	* configure.in:
+	Added check for gthread-2.0 >= 2.4.0; explicitly required to use 
+	gthread.
+
+	* src/Makevars:
+	Added file.
+
+	* src/main.c:
+	Added window icon. Changed title style.
+	
+
+2004-10-01;	Alexandru Csete <csete@isers.sourceforge.net>
+
+	* src/grig-duid.[ch]:
+	Deleted files.
+
+	* src/Makefile.am:
+	Removed grig-druid from list.
+
+	* src/support.h:
+	Added file containing gettext macros.
+
+	* src/main.c, src/grig-about.c, src/rig-anomaly.c,
+	* src/rig-daemon.c, src/rig-daemon-check.c, src/rig-data.c:
+	* src/rig-gui.c
+	Removed GNOME and GConf dependencies so that files can be compiled
+	with Gtk+ only. Replaced code which is deprecated in Gtk+ 2.4
+
+	
+2004-09-30;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c:
+	Removed GNOME dependencies.
+
+	* autogen.sh, Makefile.am, cofigure.in:
+	Updated for Gtk+ only.
+	
+	* src/Makefile.am:
+	Updated for Gtk+ only.
+	
+	* ChangeLog:
+	Updated.
+
+	* aclocal.m4, config.h.in:
+	Deleted files.
+
+	* grig.1.in, grig.desktop, grig.spec.in, acinclude.m4, config.guess,
+	* config.sub:
+	Added files.
+
+
+2004-09-29;	Alexandru Csete <oz9aec@gmail.com>
+
+	* pixmaps/digits_normal.png, digits_small.png:
+	Added files.
+
+	
+2004-09-26;	Alexandru Csete - SK1563 <oz9aec@gmail.com>
+
+	* src/rig-data.c:
+	rig_data_set functions will temporarely set the 'get' data to 
+	the 'set' value to avoid gui flip-back when daemon is to slow to
+	update the 'get' variable.
+
+	* src/rig-gui-smeter.c: 
+	Added bug comment about object limitations. Corrected description 
+	of rig_gui_meter_create.
+
+	* src/rig-gui-lcd.[ch]: 
+	Created files containing LCD widgets.
+
+	* src/Makefile.am: 
+	Added the two new iles to the list.
+
+	
+2004-09-22;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-smeter.c: 
+	Added callback functions to mode and range selector widgets. 
+	The s-meter callback now checks whether we are in RX or TX mode.
+
+	* src/rig-gui-smeter.h: 
+	Adjusted fall-off delays.
+
+	
+2004-09-21;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-smeter.h: 
+	Renamed rig_gui_smeter_t to smeter_t. Added enumerations 
+	smeter_scale_t and smeter_tx_mode_t for selecting s-meter 
+	configuration.
+
+	* src/rig-gui-smeter.c: 
+	Renamed rig_gui_smeter_t to smeter_t. Added combo boxes for scale 
+	and mode selection.
+
+	
+2004-09-20;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-data.[ch]: 
+	Added rig_data_get_strength function. Added almost all 
+	rig_data_has_get_xxx functions (at least prototype templates).
+
+	* src/rig-daemon.c: Changed powerstat sequence to set-and-get 
+	instead of get-and-set which could cause override of GUI command.
+
+	
+2004-09-18;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-smeter-conv.[ch]: 
+	Added files. Contain utility functions to convert dB to needle angle 
+	and then needle angle to (x,y) coordinates. The conversion is done in 
+	two passes with the needle angle as intermediate result, so that it 
+	can be adjusted for mechanical delays.
+	
+	* src/rig-gui-smeter.c: 
+	Removed conversion macros in favor of new conversion utility functions 
+	in the aboe mentioned file.
+
+	* src/Makefile.am: 
+	Added new files to list.
+
+	
+2004-09-13;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-smeter.c: 
+	Added constants an macros to convert from dB to
+	degrees correspondingto the inclination of the needle. The S-meter will
+	be a so-called perfect S-meter with 6dB per S-unit and S9 = 0dB.
+
+	
+2004-08-03;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-utils.c: 
+	mode_to_index algorithm was buggy. Fixed.
+
+	* src/rig-gui-smeter.c, src/rig-gui-smeter.h: 
+	Added files containing S-meter skeleton (no functionality yet).
+
+	* src/rig-gui.c: 
+	Include S-meter widget. Changed packing mode from default to 
+	FALSE/FALSE.
+
+	* src/Makefile.am: 
+	Added new files to list. Resolved patch for bug 996435 (bug closed).
+	
+
+2004-08-02;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui-buttons.c: 
+	Finished readback handlers. Also, connected signal
+	handler for the filter selector (looks like I forgot to add it before).
+	This component should be quite finished now, except some outstanding
+	issues with no tooltips for the combo boxes.
+
+	* src/rig-gui-buttons.h: 
+	Moved the default timeout value def to this file.
+	Also defined min and max values for the timer delay.
+
+	* src/grig-about.c: 
+	Added logo pixmap.
+
+	
+2004-08-01;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon-check.c, src/rig-daemon-check.h: 
+	Added function to check AGC.
+	This is part of the rig_daemon_check_level() function.
+
+	* src/rig-daemon.c, src/rig-daemon.h: 
+	Added code handling AGC commands.
+
+	* mkinstalldirs: 
+	Added file because it is not copied into grig automatically.
+
+	* Makefile.am: 
+	Added mkinstalldirs to dist files. 
+
+	* src/rig-gui-buttons.c: 
+	Added readback timeout.
+
+	
+2004-07-31;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c: 
+	Added more info on -r and -a options.
+
+	* src/grig-menu.c: 
+	Changed debug parameters to use hamlib symbols instead of 
+	hardcoded numbers.
+
+	* src/rig-utils.c, src/rig-utils.h: 
+	Created files. Contains conversion functions between hamlib 
+	mode and array index type.
+
+	* src/Makefile.am: 
+	Added new files to the list.
+
+	* src/rig-gui-buttons.c: 
+	Added mode and filter selectors. Fixed up layout.
+
+	* src/rig-data.h, src/rig-data.c: 
+	Added internal representation for passband width. Changed GET 
+	and SET function prototypes accordingly.
+
+	
+2004-07-28;	Alexandru Csete <oz9aec@gmail.com>
+
+	* configure.in: Require Gtk+ >= 2.4
+
+	
+2004-07-24;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-gui.c, src/rig-gui.h: 
+	Added files.
+
+	* src/rig-gui-buttons.c, src/rig-gui-buttons.h: 
+	Added files.
+
+	* src/main.c: 
+	Added call to rig_gui_create.
+
+	* src/rig-daemon.c: 
+	Added code to manually update 'get' data if rig doesn't support 
+	any get functions.
+
+	* src/rig-data.c, src/rig-data.h: 
+	Added AGC.
+
+	
+2004-07-23;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c, src/rig-daemon.c: 
+	Added patch for bug #996426.
+
+	
+2004-07-18;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-druid.c: 
+	Added basic functionality with start and end pages.
+
+	
+2004-07-17;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/grig-about.c, src/grig-about.h: 
+	Added files.
+
+	
+2004-07-14;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/main.c: 
+	Implemented missing functions and added main application
+	window.
+
+	* src/grig-menu.c: 
+	Added file with menu declarations.
+
+	* src/rig-ctrl.c, src/rig-ctrl.h: 
+	Created files.
+
+	
+2004-07-01;	Alexandru Csete <oz9aec@gmail.com>
+
+	* src/rig-daemon.c, src/rig-daemon.h: 
+	Finished first draft of rig daemon.
+	
